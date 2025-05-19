@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí - Mi Portafolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Ubuntu:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo" title="Ely Salem - Frontend Developer">Examen de mañana</div>
+        </div>
+    </header>
+    <section class="game-section" id="juego">
+        <h2><i class="fas fa-trophy" style="color:#f7b731;margin-right:10px;"></i>¿Quién va a ganar el millón?</h2>
+        <div class="millionaire-container">
+            <div id="millionaire-question" class="millionaire-question">Pregunta aparecerá aquí</div>
+            <div class="millionaire-options">
+                <button class="millionaire-option" data-index="0">Opción A</button>
+                <button class="millionaire-option" data-index="1">Opción B</button>
+                <button class="millionaire-option" data-index="2">Opción C</button>
+                <button class="millionaire-option" data-index="3">Opción D</button>
+            </div>
+            <div id="millionaire-message" class="millionaire-message"></div>
+            <div id="millionaire-progress" class="millionaire-progress">Pregunta 1 de 5</div>
+            <button id="millionaire-restart" style="display:none;">Reiniciar Juego</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="copyright">
+                &copy; 2025 Mi Portafolio. Todos los derechos reservados.<br>
+                <strong>Ely Salem</strong> · Frontend Developer
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#" title="Agrega la URL real de privacidad">Privacidad</a></li>
+                    <li><a href="#" title="Agrega la URL real de términos">Términos</a></li>
+                </ul>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/tuperfil" target="_blank" title="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/tunombredeusuario" target="_blank" title="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://twitter.com/tucuenta" target="_blank" title="Twitter"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="mailto:tuemail@ejemplo.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
