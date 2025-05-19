@@ -1,198 +1,203 @@
 (function() {
     const preguntas = [
         {
-            pregunta: '¿Qué archivo es el principal de estilos en un tema de WordPress?',
-            opciones: ['index.php', 'style.css', 'functions.php', 'header.php'],
+            pregunta: '¿Cómo se inicia el código PHP?',
+            opciones: ['<php>', '<?php', 'PHP start', '<?'],
             correcta: 1
         },
         {
-            pregunta: '¿Qué función de PHP se utiliza para incluir el archivo header.php en WordPress?',
-            opciones: ['include_header()', 'get_header()', 'require_header()', 'load_header()'],
+            pregunta: '¿Cuál es la forma correcta de escribir un comentario de una línea en PHP?',
+            opciones: ['// comentario', '# comentario', '/* comentario */', '-- comentario'],
+            correcta: 0
+        },
+        {
+            pregunta: '¿Qué función se utiliza en PHP para mostrar texto en la pantalla?',
+            opciones: ['print()', 'display()', 'show()', 'echo()'],
+            correcta: 3
+        },
+        {
+            pregunta: '¿Qué tipo de dato almacena valores verdaderos o falsos en PHP?',
+            opciones: ['String', 'Integer', 'Float', 'Boolean'],
+            correcta: 3
+        },
+        {
+            pregunta: '¿Cómo se concatenan variables de texto en PHP?',
+            opciones: ['+', ',', '.', 'and'],
+            correcta: 2
+        },
+        {
+            pregunta: '¿Cómo se define un array simple en PHP?',
+            opciones: ['$array = {}', '$array = ()', '$array = []', '$array = array()'],
+            correcta: 3
+        },
+        {
+            pregunta: '¿Cómo se accede al primer elemento de un array llamado `$colores` en PHP?',
+            opciones: ['$colores(0)', '$colores[1]', '$colores{0}', '$colores[0]'],
+            correcta: 3
+        },
+        {
+            pregunta: '¿Cómo se define un array asociativo en PHP?',
+            opciones: ['$usuario = ("nombre" => "Carlos")', '$usuario = {"nombre": "Carlos"}', '$usuario = array("nombre" => "Carlos")', '$usuario = ["nombre": "Carlos"]'],
+            correcta: 2
+        },
+        {
+            pregunta: '¿Qué estructura condicional se utiliza en PHP para ejecutar diferentes bloques de código según una condición?',
+            opciones: ['switch', 'if...else', 'while', 'for'],
             correcta: 1
         },
         {
-            pregunta: '¿En qué archivo de WordPress se suelen añadir funciones personalizadas para el tema?',
-            opciones: ['style.css', 'index.php', 'functions.php', 'footer.php'],
-            correcta: 2
+            pregunta: '¿Qué estructura condicional se utiliza en PHP para verificar múltiples condiciones secuencialmente?',
+            opciones: ['if...elseif...else', 'for', 'do...while', 'switch'],
+            correcta: 0
         },
         {
-            pregunta: '¿Qué función se utiliza para cargar correctamente hojas de estilo en WordPress?',
-            opciones: ['load_style()', 'add_css()', 'wp_enqueue_style()', 'include_css()'],
-            correcta: 2
-        },
-        {
-            pregunta: '¿Qué hook se utiliza para encolar scripts y estilos en WordPress?',
-            opciones: ['admin_enqueue_scripts', 'wp_head', 'wp_footer', 'wp_enqueue_scripts'],
+            pregunta: '¿Qué bucle en PHP se utiliza para iterar un número específico de veces?',
+            opciones: ['foreach', 'while', 'do...while', 'for'],
             correcta: 3
         },
         {
-            pregunta: '¿Cuál de las siguientes NO es una buena práctica mencionada para WordPress?',
-            opciones: ['Usar solo los plugins necesarios', 'Usar un hosting gratuito', 'Optimizar imágenes', 'Mantener WordPress actualizado'],
+            pregunta: '¿Qué bucle en PHP es especialmente útil para recorrer elementos de un array?',
+            opciones: ['for', 'while', 'do...while', 'foreach'],
+            correcta: 3
+        },
+        {
+            pregunta: '¿Cómo se define una función en PHP?',
+            opciones: ['function NombreFuncion() {}', 'def NombreFuncion() {}', 'void NombreFuncion() {}', 'NombreFuncion = function() {}'],
+            correcta: 0
+        },
+        {
+            pregunta: '¿Cómo se devuelve un valor desde una función en PHP?',
+            opciones: ['output $valor;', 'return $valor;', 'send $valor;', 'give $valor;'],
             correcta: 1
         },
         {
-            pregunta: '¿Qué formato de imagen es recomendado para la web por su capacidad de reducir peso sin perder calidad?',
-            opciones: ['JPG', 'PNG', 'GIF', 'WebP'],
+            pregunta: '¿Cómo se define una clase en PHP?',
+            opciones: ['class NombreClase {}', 'struct NombreClase {}', 'object NombreClase {}', 'type NombreClase {}'],
+            correcta: 0
+        },
+        {
+            pregunta: '¿Cómo se declara una propiedad pública en una clase PHP?',
+            opciones: ['var $nombre;', 'private $nombre;', 'protected $nombre;', 'public $nombre;'],
             correcta: 3
         },
         {
-            pregunta: '¿Qué tipo de caché guarda copias de la web en servidores de todo el mundo para acelerar la carga?',
-            opciones: ['Caché del navegador', 'Caché del servidor', 'Caché de plugins', 'Caché de CDN'],
-            correcta: 3
-        },
-        {
-            pregunta: '¿Cuál de los siguientes temas se menciona como un tema ligero para WordPress?',
-            opciones: ['Twenty Twenty-One', 'Divi', 'Astra', 'Avada'],
+            pregunta: '¿Cómo se define un método en una clase PHP?',
+            opciones: ['method saludar() {}', 'function saludar() {}', 'public function saludar() {}', 'saludar = function() {}'],
             correcta: 2
         },
         {
-            pregunta: '¿En qué carpeta dentro de wp-content se almacenan los temas de WordPress?',
-            opciones: ['plugins/', 'themes/', 'uploads/', 'languages/'],
+            pregunta: '¿Cómo se crea una instancia de una clase en PHP?',
+            opciones: ['$objeto = Clase();', '$objeto = new Clase;', '$objeto = create Clase;', '$objeto = make Clase;'],
             correcta: 1
         },
         {
-            pregunta: '¿Qué herramienta online se menciona para reducir el tamaño de las imágenes sin perder calidad?',
-            opciones: ['Smush', 'Imagify', 'TinyPNG', 'Kraken.io'],
-            correcta: 2 // Corregido a TinyPNG según el texto
+            pregunta: '¿Cómo se accede a una propiedad de un objeto en PHP?',
+            opciones: ['$objeto->nombre', '$objeto.nombre', '$objeto::nombre', '$objeto["nombre"]'],
+            correcta: 0
         },
         {
-            pregunta: '¿Cuál es el nombre del archivo principal de estilos de un tema de WordPress?',
-            opciones: ['main.css', 'styles.php', 'template.css', 'style.css'],
-            correcta: 3
+            pregunta: '¿Cómo se llama a un método de un objeto en PHP?',
+            opciones: ['$objeto->saludar()', '$objeto.saludar()', '$objeto::saludar()', '$objeto["saludar"]()'],
+            correcta: 0
         },
         {
-            pregunta: '¿Qué función se utiliza para obtener la ruta del directorio del tema actual en WordPress?',
-            opciones: ['get_theme_path()', 'theme_url()', 'get_template_directory_uri()', 'get_theme_uri()'],
+            pregunta: '¿Qué función de WordPress se utiliza para obtener el nombre del sitio?',
+            opciones: ['get_site_name()', 'blog_name()', 'get_bloginfo(\'name\')', 'site_title()'],
             correcta: 2
         },
         {
-            pregunta: 'Según el texto, ¿qué se debe hacer ANTES de actualizar WordPress o los plugins?',
-            opciones: ['Desactivar todos los plugins', 'Crear una copia de seguridad', 'Borrar la caché', 'Editar el archivo wp-config.php'],
+            pregunta: '¿Qué función de WordPress se utiliza para mostrar el título de la entrada actual dentro del Loop?',
+            opciones: ['get_the_title()', 'show_title()', 'display_title()', 'the_title()'],
+            correcta: 3
+        },
+        {
+            pregunta: '¿Qué función de WordPress se utiliza para obtener la URL del post actual?',
+            opciones: ['get_post_url()', 'the_url()', 'get_permalink()', 'post_link()'],
+            correcta: 2
+        },
+        {
+            pregunta: '¿Qué función de WordPress verifica si el post actual tiene una imagen destacada?',
+            opciones: ['check_thumbnail()', 'has_featured_image()', 'post_has_thumbnail()', 'has_post_thumbnail()'],
+            correcta: 3
+        },
+        {
+            pregunta: '¿Qué función de WordPress se utiliza para mostrar las categorías de un post separadas por comas?',
+            opciones: ['list_categories()', 'get_categories()', 'the_category(\',\')', 'show_post_categories()'],
+            correcta: 2
+        },
+        {
+            pregunta: '¿Qué función de WordPress se utiliza para mostrar un menú registrado por su ubicación en el tema?',
+            opciones: ['show_menu()', 'display_navigation()', 'wp_show_nav_menu()', 'wp_nav_menu()'],
+            correcta: 3
+        },
+        {
+            pregunta: '¿Qué función de WordPress se utiliza para mostrar una zona de widgets registrada por su ID?',
+            opciones: ['show_sidebar()', 'display_widgets()', 'get_sidebar()', 'dynamic_sidebar()'],
+            correcta: 3
+        },
+        {
+            pregunta: '¿Qué función condicional de WordPress devuelve `true` si la página actual es la página de inicio?',
+            opciones: ['is_front()', 'is_home()', 'is_index()', 'is_main_page()'],
             correcta: 1
         },
         {
-            pregunta: '¿Cuál es la principal función de un tema de WordPress?',
-            opciones: ['Gestionar la base de datos', 'Almacenar el contenido del sitio', 'Definir la apariencia visual del sitio', 'Añadir funcionalidades extra al sitio'],
+            pregunta: '¿Qué función condicional de WordPress devuelve `true` si la página actual es una entrada individual?',
+            opciones: ['is_post()', 'is_article()', 'is_single()', 'is_the_post()'],
             correcta: 2
         },
         {
-            pregunta: '¿Qué archivo de un tema de WordPress actúa como la "puerta de entrada" si no se encuentra una plantilla más específica?',
-            opciones: ['header.php', 'footer.php', 'page.php', 'index.php'],
-            correcta: 3
-        },
-        {
-            pregunta: '¿Qué archivo se utiliza en un tema de WordPress para mostrar páginas estáticas como "Sobre mí" o "Contacto"?',
-            opciones: ['single.php', 'archive.php', 'page.php', 'front-page.php'],
-            correcta: 2
-        },
-        {
-            pregunta: '¿Qué archivo se utiliza en un tema de WordPress para mostrar una sola entrada del blog?',
-            opciones: ['page.php', 'home.php', 'single.php', 'index.php'],
-            correcta: 2
-        },
-        {
-            pregunta: '¿Qué prefijo se utiliza comúnmente en Tailwind CSS para las clases de fondo?',
-            opciones: ['text-', 'bg-', 'font-', 'border-'],
+            pregunta: '¿Qué función condicional de WordPress devuelve `true` si la página actual es una página estática?',
+            opciones: ['is_static_page()', 'is_page()', 'is_single_page()', 'is_type_page()'],
             correcta: 1
         },
         {
-            pregunta: 'Según el texto, ¿qué comando de npm se utiliza para construir los estilos de Tailwind CSS?',
-            opciones: ['npm start', 'npm run dev', 'npm run build', 'npm install'],
+            pregunta: '¿Qué función de WordPress se utiliza para limpiar texto para su uso en HTML, convirtiendo caracteres especiales en entidades?',
+            opciones: ['sanitize_html()', 'clean_text()', 'esc_html()', 'secure_text()'],
             correcta: 2
         },
         {
-            pregunta: '¿Qué se debe incluir en la parte superior del archivo `style.css` de un tema de WordPress?',
-            opciones: ['Solo estilos CSS', 'Información del tema (nombre, autor, etc.)', 'Funciones PHP', 'Scripts de JavaScript'],
-            correcta: 1
-        },
-        {
-            pregunta: '¿Qué archivo de WordPress contiene la información que se muestra al final de cada página?',
-            opciones: ['header.php', 'sidebar.php', 'footer.php', 'functions.php'],
+            pregunta: '¿Qué función de WordPress se utiliza para limpiar texto para atributos HTML?',
+            opciones: ['sanitize_attribute()', 'clean_attr()', 'esc_attr()', 'secure_attr()'],
             correcta: 2
         },
         {
-            pregunta: '¿Qué función de WordPress se utiliza para añadir soporte para imágenes destacadas en un tema?',
-            opciones: ['add_thumbnail_support()', 'set_post_thumbnail()', 'add_theme_support(\'post-thumbnails\')', 'enable_featured_image()'],
+            pregunta: '¿Qué función de WordPress se utiliza para filtrar HTML permitiendo solo etiquetas seguras?',
+            opciones: ['filter_html()', 'sanitize_html_content()', 'wp_kses_post()', 'secure_html()'],
             correcta: 2
         },
         {
-            pregunta: '¿Cuál es el nombre del directorio donde se deben descomprimir los archivos de WordPress en un servidor local con XAMPP?',
-            opciones: ['www', 'htdocs', 'localhost', 'xampp'],
-            correcta: 1
-        },
-        {
-            pregunta: '¿Qué herramienta se menciona para manejar las bases de datos en un entorno local con XAMPP?',
-            opciones: ['Administrador de XAMPP', 'Panel de control de MySQL', 'phpMyAdmin', 'Gestor de bases de datos local'],
+            pregunta: '¿Qué función de WordPress se utiliza para limpiar URLs para evitar código malicioso?',
+            opciones: ['sanitize_url()', 'clean_url()', 'esc_url()', 'secure_url()'],
             correcta: 2
         },
         {
-            pregunta: '¿Qué prefijo se utiliza comúnmente en Tailwind CSS para las clases de texto?',
-            opciones: ['bg-', 'shadow-', 'text-', 'border-'],
-            correcta: 2
-        },
-        {
-            pregunta: '¿Qué archivo de configuración utiliza Tailwind CSS?',
-            opciones: ['tailwind.config.css', 'tailwind.config.php', 'postcss.config.js', 'tailwind.config.js'],
+            pregunta: '¿Qué función de WordPress se utiliza para eliminar etiquetas HTML y caracteres no válidos de un texto?',
+            opciones: ['strip_text()', 'sanitize_string()', 'wp_strip_all_tags()', 'sanitize_text_field()'],
             correcta: 3
         },
         {
-            pregunta: '¿Qué comando de npm se utiliza para iniciar un proyecto con node y poder utilizar sus dependencias?',
-            opciones: ['npm install', 'npm start', 'npm init -y', 'npm add'],
+            pregunta: '¿Cuál es el propósito principal de "The Loop" en WordPress?',
+            opciones: ['Gestionar la base de datos', 'Mostrar la estructura del tema', 'Recorrer y mostrar publicaciones', 'Cargar archivos CSS y JS'],
             correcta: 2
         },
         {
-            pregunta: '¿Qué se define en la sección `content` del archivo `tailwind.config.js`?',
-            opciones: ['Los colores del tema', 'Las fuentes utilizadas', 'Las rutas a los archivos que usarán Tailwind', 'Los plugins de Tailwind'],
+            pregunta: '¿Qué función se utiliza dentro de "The Loop" para preparar los datos de la publicación actual?',
+            opciones: ['get_post_data()', 'load_post()', 'the_post()', 'fetch_post()'],
             correcta: 2
         },
         {
-            pregunta: '¿Qué directiva de Tailwind CSS se utiliza para importar los estilos base?',
-            opciones: ['@tailwind components;', '@tailwind utilities;', '@tailwind base;', '@import "tailwindcss/base";'],
-            correcta: 2
-        },
-        {
-            pregunta: '¿Qué directiva de Tailwind CSS se utiliza para importar los estilos de los componentes?',
-            opciones: ['@tailwind base;', '@import "tailwindcss/components";', '@tailwind utilities;', '@tailwind components;'],
+            pregunta: '¿Qué función se utiliza dentro de "The Loop" para mostrar el contenido completo de una publicación?',
+            opciones: ['show_content()', 'display_the_content()', 'the_post_content()', 'the_content()'],
             correcta: 3
         },
         {
-            pregunta: '¿Qué directiva de Tailwind CSS se utiliza para importar las clases de utilidad?',
-            opciones: ['@import "tailwindcss/utilities";', '@tailwind base;', '@tailwind components;', '@tailwind utilities;'],
+            pregunta: '¿Qué función se utiliza dentro de "The Loop" para verificar si hay más publicaciones para mostrar?',
+            opciones: ['have_more()', 'next_post()', 'has_next_post()', 'have_posts()'],
             correcta: 3
         },
         {
-            pregunta: '¿Qué archivo se menciona para configurar los colores personalizados en Tailwind CSS?',
-            opciones: ['src/style.css', 'postcss.config.js', 'tailwind.config.js', 'package.json'],
-            correcta: 2
-        },
-        {
-            pregunta: '¿En qué sección del archivo `tailwind.config.js` se pueden agregar colores personalizados?',
-            opciones: ['plugins', 'variants', 'theme.extend.colors', 'corePlugins'],
-            correcta: 2
-        },
-        {
-            pregunta: '¿Qué unidad de medida se utiliza en el ejemplo para definir el espaciado personalizado en Tailwind CSS (ej: \'128\': \'32rem\')?',
-            opciones: ['px', 'em', 'rem', '%'],
-            correcta: 2
-        },
-        {
-            pregunta: '¿En qué sección del archivo `tailwind.config.js` se definen las fuentes personalizadas?',
-            opciones: ['theme.extend.spacing', 'plugins', 'theme.extend.fontFamily', 'variants'],
-            correcta: 2
-        },
-        {
-            pregunta: '¿Qué propiedad de CSS se utiliza en el ejemplo para definir sombras personalizadas en Tailwind CSS?',
-            opciones: ['borderShadow', 'text-shadow', 'box-shadow', 'drop-shadow'],
-            correcta: 2
-        },
-        {
-            pregunta: 'Después de modificar el archivo `tailwind.config.js`, ¿qué comando se debe ejecutar para que los cambios tengan efecto?',
-            opciones: ['npm start', 'npm install tailwindcss', 'npm run build', 'npm update'],
-            correcta: 2
-        },
-        {
-            pregunta: '¿Qué se puede personalizar de un proyecto Tailwind CSS utilizando el archivo de configuración?',
-            opciones: ['Solo colores', 'Solo fuentes', 'Casi todos los aspectos (colores, fuentes, tamaños, etc.)', 'Solo los plugins'],
+            pregunta: '¿En qué tipo de archivos de WordPress es fundamental el uso de "The Loop"?',
+            opciones: ['functions.php', 'wp-config.php', 'archivos de plantilla del tema', 'archivos de plugin'],
             correcta: 2
         }
     ];
